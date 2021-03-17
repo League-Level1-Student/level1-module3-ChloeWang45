@@ -5,6 +5,7 @@ package _03_jars._3_magic_box;
  */
 
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
@@ -12,9 +13,11 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -39,8 +42,10 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 
 	JFrame frame = new JFrame();
 	
-	BufferedImage backgroundImage;
-
+	static BufferedImage backgroundImage;
+	int a = -1253727;
+	int b = -3693973;
+	int c = -7950685;
 
 	@Override
 	public void run() {
@@ -59,6 +64,7 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 		frame.pack();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
+		frame.addMouseListener(this);
 	}
 
 	private void loadBackgroundImage() throws Exception {
@@ -78,7 +84,28 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-		
+		MediaPalace m = new MediaPalace();
+		if(backgroundImage.getRGB(e.getX(), e.getY()) == a) {
+			JLabel label = m.loadImageFromWithinProject("sun.png");
+			JFrame frame = new JFrame();
+			frame.add(label);
+			frame.pack();
+			frame.setVisible(true);
+		}
+		else if(backgroundImage.getRGB(e.getX(), e.getY()) == b) {
+			JLabel label = m.loadImageFromWithinProject("moon.jpg");
+			JFrame frame = new JFrame();
+			frame.add(label);
+			frame.pack();
+			frame.setVisible(true);
+		}
+		else if(backgroundImage.getRGB(e.getX(), e.getY()) == c) {
+			JLabel label = m.loadImageFromWithinProject("star.png");
+			JFrame frame = new JFrame();
+			frame.add(label);
+			frame.pack();
+			frame.setVisible(true);
+		}
 	}
 
 	@Override
