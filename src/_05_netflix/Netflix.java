@@ -8,7 +8,7 @@ public class Netflix {
 		Movie twilight = new Movie("Twilight", 2);
 		Movie kissingbooth = new Movie("The Kissing Booth", 3);
 		Movie dirt = new Movie("Dirt", 1);
-		wonder.getTicketPrice();
+		System.out.println(wonder.getTicketPrice());
 		NetflixQueue queue = new NetflixQueue();
 		queue.addMovie(wonder);
 		queue.addMovie(titanic);
@@ -17,6 +17,6 @@ public class Netflix {
 		queue.addMovie(dirt);
 		queue.printMovies();
 		System.out.println("The best movie is " + queue.getBestMovie());
-		System.out.println("The second best movie is " );
+		System.out.println("The second best movie is " + queue.getSecondBestMovie());
 	}
 }

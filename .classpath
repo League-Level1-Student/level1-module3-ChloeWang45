@@ -11,5 +11,6 @@
 	<classpathentry kind="lib" path="src/_03_jars/_1_intro_to_jars/robot.jar"/>
 	<classpathentry kind="lib" path="src/_03_jars/_3_magic_box/javazoom.jar"/>
 	<classpathentry kind="lib" path="src/_03_jars/_2_jukebox/javazoom.jar"/>
+	<classpathentry kind="lib" path="src/_06_gridworld/gridworld.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
